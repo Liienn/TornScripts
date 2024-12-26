@@ -11,7 +11,7 @@ For the best experience, I recommend using Tampermonkey, as it is widely support
 
 LIST OF SCRIPTS:
 - [Check Drug Cooldown](#check-drug-cooldown)
-- [Check Employee Penalties](#check-employee-penalties)
+- [Check Employee Penalties (for company owners)](#check-employee-penalties)
   
 _______
 ## Check Drug Cooldown

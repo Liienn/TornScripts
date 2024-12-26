@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Check Drug Cooldown
 // @namespace    http://tampermonkey.net/
-// @version      0.55
+// @version      0.56
 // @description  Don't waste time not taking drugs!
 // @author       https://github.com/Liienn
 // @match        https://www.torn.com/*

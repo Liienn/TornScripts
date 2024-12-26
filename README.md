@@ -27,15 +27,12 @@ No more waiting around wondering if it's time to take your next dose. This scrip
     
     - Green (Flashing): Ready to take drugs.
       
-    ![image](https://github.com/user-attachments/assets/a83fe944-967d-49a7-a7b8-f2b6f5b7b52a)
-
     - Yellow/Orange: Cooldown is less than 1h.
       
-    ![image](https://github.com/user-attachments/assets/93b5f4a7-6128-4614-bd2a-8423bafb7481)
-
     - Red: Cooldown is still active.
       
-    ![image](https://github.com/user-attachments/assets/dffee9d0-0657-4833-8d79-540c57b8b53c)
+    ![image](https://github.com/user-attachments/assets/7452be30-e7e7-4fef-93d7-7a3c09e3ee9b)
+
 
   - Refreshes every minute to ensure up-to-date information.
 

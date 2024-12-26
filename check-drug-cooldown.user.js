@@ -77,7 +77,7 @@
         } else if (hours === 0 && minutes < 30 && minutes > 0) {
             messageElement.style.backgroundColor = 'rgba(255, 255, 0, 0.7)'; // Yellow
         } else {
-            messageElement.style.backgroundColor = isFlashing ? 'rgba(0, 255, 0, 0.7)' : 'rgba(255, 0, 0, 0.7)'; // Green or Red
+            messageElement.style.backgroundColor = isFlashing ? 'rgba(0, 255, 0, 0.7)' : 'rgba(255, 0, 0, 0.5)'; // Green or Red
         }
         messageElement.style.color = '#000';
         messageElement.style.padding = '1px';

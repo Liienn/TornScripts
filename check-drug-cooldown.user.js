@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Check Drug Cooldown
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.55
 // @description  Don't waste time not taking drugs!
 // @author       https://github.com/Liienn
 // @match        https://www.torn.com/*
@@ -63,20 +63,15 @@
         console.log(`Cooldown ends in: ${hours} hour(s) and ${minutes} minute(s).`);
     }
 
-    // Function to display a message near a target element
-    function displayMessageNearTarget(targetElement, message, isFlashing = false) {
-        if (!targetElement) {
-            console.log('Target element not found');
-            return;
-        }
-
-        // Create and style the message element
+    function displayMessageNearTarget(message, isFlashing = false) {
+        const delimiter = document.querySelector('.delimiter___bIaxE');
         const messageElement = document.createElement('div');
+        delimiter.parentNode.insertBefore(messageElement, delimiter.nextSibling);
         messageElement.id = 'statusMessage';
         messageElement.textContent = message;
-        messageElement.style.position = 'absolute';
+
         // Set background color based on hours and minutes
-        console.log(minutes, minutes>30)
+        console.log(minutes, minutes > 30);
         if (hours === 0 && minutes > 30) {
             messageElement.style.backgroundColor = 'rgba(255, 165, 0, 0.7)'; // Orange
         } else if (hours === 0 && minutes < 30 && minutes > 0) {
@@ -85,51 +80,47 @@
             messageElement.style.backgroundColor = isFlashing ? 'rgba(0, 255, 0, 0.7)' : 'rgba(255, 0, 0, 0.7)'; // Green or Red
         }
         messageElement.style.color = '#000';
-        messageElement.style.padding = '5px';
+        messageElement.style.padding = '1px';
         messageElement.style.borderRadius = '3px';
         messageElement.style.zIndex = '1000';
         messageElement.style.fontWeight = 'bold';
+        messageElement.style.fontSize = '11px';
         messageElement.style.textAlign = 'center';
+        messageElement.style.maxHeight = '35px'; // Set the maximum height
+        messageElement.style.overflowY = 'auto';
         messageElement.style.whiteSpace = 'pre-wrap'; // Preserve newlines
+        messageElement.style.display = 'block';
 
         // Add flashing effect if required
         if (isFlashing) {
             messageElement.style.animation = 'flashing 1s infinite';
-        } else {
-            messageElement.style.width = '110px';
+            messageElement.style.fontSize = '12px';
         }
-
-        // Position message near the target element
-        const rect = targetElement.getBoundingClientRect();
-        messageElement.style.top = `${rect.top + window.scrollY + 25}px`;
-        messageElement.style.left = `${rect.left + window.scrollX - 120}px`;
-        document.body.appendChild(messageElement);
 
         // Define CSS for flashing animation
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes flashing {
-                0% { opacity: 1; }
-                50% { opacity: 0.5; }
-                100% { opacity: 1; }
-            }
-        `;
+        @keyframes flashing {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    `;
         document.head.appendChild(style);
     }
 
     // Check presence of cooldown and show message
     async function checkAndShowMessage() {
-        const targetElement = document.querySelector("#sidebar");
         const existingMessage = document.querySelector('#statusMessage');
         await fetchData();
         if (existingMessage) existingMessage.remove();
 
         if (minutes === 0 && hours === 0) {
             console.log("Not in cooldown");
-            displayMessageNearTarget(targetElement, '!! TAKE DRUGS !!', true);
+            displayMessageNearTarget('!! TAKE DRUGS !!', true);
         } else {
             console.log("Still in cooldown");
-            displayMessageNearTarget(targetElement, `${cooldownDrug}\n\n for ${hours}h ${minutes}m`);
+            displayMessageNearTarget(`${cooldownDrug} for ${hours}h ${minutes}m`);
         }
     }
 

@@ -52,7 +52,7 @@ You’ve got employees, and you’ve got **responsibilities**—or maybe just th
 This tool checks your employees for those pesky penalties like inactivity and addiction, and then reminds you where they stand in the most *colorful* way possible. It's like having a personal assistant for your **employer of the year** status, except they don’t take coffee breaks or ask for raises.
 
 ### Features
-  - **Inactivity Detection**: Highlights employees with high inactivity levels.
+  - **Inactivity Detection**: Highlights employees with inactivity levels.
   - **Addiction Level Monitoring**: Displays warnings for addiction levels.
   - **Dynamic Message Display**: Adds color-coded messages next to employees for better visibility.
   - **Refresh Button**: Allows for easy updating of employee states with a single click.

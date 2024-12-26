@@ -6,6 +6,8 @@
 // @author       https://github.com/Liienn
 // @match        https://www.torn.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=torn.com
+// @downloadURL  https://raw.githubusercontent.com/Liienn/TornScripts/main/check-drug-cooldown.user.js
+// @updateURL    https://raw.githubusercontent.com/Liienn/TornScripts/main/check-drug-cooldown.user.js
 // @grant        none
 // ==/UserScript==
 

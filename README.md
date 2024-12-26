@@ -54,7 +54,8 @@ This tool checks your employees for those pesky penalties like inactivity and ad
   - **Dynamic Message Display**: Adds color-coded messages next to employees for better visibility.
   - **Refresh Button**: Allows for easy updating of employee states with a single click.
 
-![image](https://github.com/user-attachments/assets/d1e9441f-6af9-4579-81e7-469156f85b03)
+![image](https://github.com/user-attachments/assets/d1e9441f-6af9-4579-81e7-469156f85b03) ![image](https://github.com/user-attachments/assets/474d81d6-ba07-4430-bf77-6c57a8e2839a)
+
 
 
 ### Installation
